@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WuPinYi</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0e0e11;
+      --surface: #18181c;
+      --surface2: #222226;
+      --text: #f0f0f2;
+      --text-dim: #888;
+      --gold: #ffcc33;
+      --accent: #5b7fff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    nav a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+
+    .github-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface2);
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 13px !important;
+      transition: background 0.2s !important;
+    }
+
+    .github-link:hover { background: #2c2c30 !important; color: var(--text) !important; }
+
+    /* HERO */
+    .hero {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 80px 32px 60px;
+    }
+
+    .greeting {
+      font-size: 16px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 8vw, 64px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 0%, #aaaacc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      max-width: 460px;
+    }
+
+    .tagline span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* PROJECTS */
+    .section {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 32px 80px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 24px;
+      text-decoration: none;
+      color: var(--text);
+      display: block;
+      transition: transform 0.2s, border-color 0.2s, background 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,0.14);
+      background: var(--surface2);
+    }
+
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(91,127,255,0.12);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 32px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="/">WuPinYi</a>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a class="github-link" href="https://github.com/WuPinYi" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.57v-2c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.68.82.57C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+      </svg>
+      GitHub
+    </a>
+  </div>
+</nav>
+
+<section class="hero">
+  <p class="greeting">Hi there 👋</p>
+  <h1>Wu Pinyi</h1>
+  <p class="tagline">
+    iOS developer who builds things for fun.
+    Currently making <span>games & apps</span> with Swift.
+  </p>
+</section>
+
+<section class="section" id="projects">
+  <p class="section-title">Projects</p>
+  <div class="cards">
+    <a class="card" href="/BallLines/balllines/">
+      <div class="card-icon">🔵</div>
+      <h3>Ball Lines</h3>
+      <p>Classic puzzle game. Move balls to form lines of 5 or more to clear them. Wild balls, combos, and high scores.</p>
+      <span class="tag">▶ Play Now</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  Built by WuPinYi · <a href="https://github.com/WuPinYi" style="color:inherit">GitHub</a>
+</footer>
+
+</body>
+</html>
