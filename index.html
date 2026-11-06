@@ -66,6 +66,27 @@
 
     .github-link:hover { background: #2c2c30 !important; color: var(--text) !important; }
 
+    .dividend-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 204, 51, 0.12);
+      border: 1px solid rgba(255, 204, 51, 0.3);
+      color: var(--gold);
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .dividend-btn:hover {
+      background: rgba(255, 204, 51, 0.22);
+      border-color: rgba(255, 204, 51, 0.6);
+      color: var(--gold);
+    }
+
     /* HERO */
     .hero {
       max-width: 680px;
@@ -188,6 +209,7 @@
 <nav>
   <a class="logo" href="/">WuPinYi</a>
   <div class="nav-links">
+    <a class="dividend-btn" href="https://wupinyi.github.io/fubon-dashboard/" target="_blank" title="配息儀表板">$</a>
     <a href="#projects">Projects</a>
     <a class="github-link" href="https://github.com/WuPinYi" target="_blank">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
